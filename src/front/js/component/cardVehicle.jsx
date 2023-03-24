@@ -3,17 +3,18 @@ import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import "../../styles/home.css";
 
-const CardPeople = () => {
+const CardVehicle = () => {
     const { store, actions } = useContext(Context);
 
-    const [people, setPeople] = useState([]);
+    const [vehicle, setVehicle] = useState([]);
+
 
     useEffect(() => {
-
         if (store.initialFetch.length > 0) {
-            setPeople(store.initialFetch[0]);
+            setVehicle(store.initialFetch[1]);
         }
     }, [store.initialFetch]);
+
 
     const addToFavorites = (item) => {
         actions.addFavorite(item);
@@ -22,16 +23,15 @@ const CardPeople = () => {
     return (
         <>
             <div className="container-fluid p-5 bg-dark">
-                <div className="card-container d-flex flex-nowrap border-light">
-                    {people && people.length > 0 ? (
+                <div className="card-container d-flex flex-nowrap">
+                    {vehicle && vehicle.length > 0 ? (
                         <>
-                            {people.map((item, index) => {
+                            {vehicle.map((item, index) => {
                                 return (
-                                    <div className="card-wrapper border-light" key={item.uid}>
+                                    <div className="card-wrapper" key={item.uid}>
                                         <div className="card bg-dark border-light" style={{ width: "250px" }}>
                                             <img
-                                                src={`https://starwars-visualguide.com/assets/img/characters/${item.uid}.jpg`}
-                                                onError={(e) => { e.target.onerror = null; e.target.src = 'https://starwars-visualguide.com/assets/img/big-placeholder.jpg' }}
+                                                src={`https://starwars-visualguide.com/assets/img/vehicles/${item.uid}.jpg`}
                                                 className="card-img-top border border-light"
                                                 alt="..."
                                             />
@@ -43,11 +43,11 @@ const CardPeople = () => {
                                                     make up the bulk of the card's content.
                                                 </p>
                                                 <div className="d-flex justify-content-between">
-                                                    <Link to={`/people/${item.uid}`} className="btn btn-light text-dark">
+                                                    <Link to={`/vehicle/${item.uid}`} className="btn btn-light text-dark">
                                                         Learn More!
                                                     </Link>
                                                     <button type="button" className="btn bg-danger" onClick={() => {
-                                                        let urlPath = { ...item, url: "/people/" };
+                                                        let urlPath = { ...item, url: "/vehicle/" };
                                                         addToFavorites(urlPath);
                                                     }}><i class="fa-regular fa-heart"></i></button>
                                                 </div>
@@ -66,4 +66,4 @@ const CardPeople = () => {
     );
 };
 
-export default CardPeople;
+export default CardVehicle;

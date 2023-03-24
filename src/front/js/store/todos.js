@@ -50,7 +50,7 @@ export function todoActions(getStore, getActions, setStore) {
             //Ahora envío la petición con la lista de To Do, y espero la respuesta del servidor
             let arrTemp = [...store.todoList, todoObj]
             //pero dependerá de si existe ya el usuario creado:
-            let { respuestaJson, response } = await actions.useFetch(`/todos/user/${store.user}`, arrTemp, "PUT")
+            let { respuestaJson, response } = await actions.useFetch(`/todos/user/${store.user}`, [...store.todoList, todoObj], "PUT")
 
 
             if (response.ok) {//Si la respuesta es positiva entonces se modificó en el backend
