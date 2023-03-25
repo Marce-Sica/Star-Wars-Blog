@@ -73,7 +73,7 @@ export const Navbar = () => {
                   })}
                 </>
               ) : (
-                <>empty</>
+                <><strong className="d-flex justify-content-center">No favorites</strong></>
               )}
             </ul>
           </div>
