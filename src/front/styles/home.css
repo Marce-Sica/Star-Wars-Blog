@@ -5,6 +5,7 @@ body {
 .card-container {
   display: flex;
   overflow-x: auto;
+  padding-bottom: 20px;
 }
 
 .card-wrapper {
