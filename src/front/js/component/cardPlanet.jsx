@@ -30,7 +30,7 @@ const CardPlanet = () => {
                                             <img
                                                 src={`https://starwars-visualguide.com/assets/img/planets/${item.uid}.jpg`}
                                                 onError={(e) => { e.target.onerror = null; e.target.src = 'https://starwars-visualguide.com/assets/img/big-placeholder.jpg' }}
-                                                className="card-img-top border border-light"
+                                                className="card-planets card-img-top border border-light"
                                                 alt="..."
                                             />
                                             <div className="card-body">
@@ -47,7 +47,7 @@ const CardPlanet = () => {
                                                     <button type="button" className="btn bg-danger" onClick={() => {
                                                         let urlPath = { ...item, url: "/planets/" };
                                                         addToFavorites(urlPath);
-                                                    }}><i class="fa-regular fa-heart"></i></button>
+                                                    }}><i className="fa-regular fa-heart"></i></button>
                                                 </div>
                                             </div>
                                         </div>

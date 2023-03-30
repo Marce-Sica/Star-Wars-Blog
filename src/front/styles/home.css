@@ -3,22 +3,26 @@ body {
 }
 
 .card-container {
-    display: flex;
-    overflow-x: auto;
-  }
-  
-  .card-wrapper {
-    display: inline-block;
-    width: 18rem;
-    margin-right: 1rem;
-  }
-  
-  .card-text-limited {
-    word-wrap: break-word;
-  }
-  
-  .item-name {
-    max-width: 120px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+  display: flex;
+  overflow-x: auto;
+}
+
+.card-wrapper {
+  display: inline-block;
+  width: 18rem;
+  margin-right: 1rem;
+}
+
+.card-text-limited {
+  word-wrap: break-word;
+}
+
+.item-name {
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-planets {
+  height: 15.5rem;
+}
